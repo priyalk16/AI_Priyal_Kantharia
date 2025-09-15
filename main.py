@@ -3,12 +3,13 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from dotenv import load_dotenv
 
+# Import the core modules you created
 from core.kg_connector import KnowledgeGraphConnector
 from core.llm_generator import generate_content
 from core.formatter import format_manim_data
 from core.manim_automator import render_manim_video
 
-# Load environment variables from .env file
+# Load environment variables from a .env file (for local development)
 load_dotenv()
 
 app = FastAPI(
@@ -19,7 +20,7 @@ app = FastAPI(
 class ConceptRequest(BaseModel):
     """
     Pydantic model for the request body.
-    It ensures the user input is a string for the 'concept'.
+    Ensures the user provides a 'concept' as a string.
     """
     concept: str
 
@@ -36,7 +37,6 @@ def generate_video(request: ConceptRequest):
     """
     try:
         # Step 1: Connect to Knowledge Graph and retrieve data
-        # Use environment variables for secure credentials
         uri = os.getenv("NEO4J_URI", "bolt://localhost:7687")
         user = os.getenv("NEO4J_USER", "neo4j")
         password = os.getenv("NEO4J_PASSWORD", "password")
