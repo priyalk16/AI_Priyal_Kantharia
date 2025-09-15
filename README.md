@@ -2,44 +2,45 @@
 
 ## ✨ Project Overview
 
-Edu-Viz is a groundbreaking project that transforms static textbook knowledge into dynamic, AI-powered animated videos. By bridging the gap between dense theory and engaging visuals, our platform offers a personalized learning experience for complex subjects like **Data Structures, GIS, and Space Tech**.  
+Edu-Viz is an innovative project that transforms static textbook knowledge into **dynamic, AI-powered animated videos**.  
+By bridging the gap between dense theory and engaging visuals, our platform offers a **personalized learning experience** for complex subjects like **Data Structures, GIS, and Space Technology**.  
 
-Instead of reading, students can simply query a concept and watch it come to life.
+Instead of reading long chapters, students can simply query a concept and watch it come to life through animations.
 
 ---
 
 ## ⚙️ How It Works
 
-The system is an orchestrated pipeline of modern technologies. The flow is:
+The system is an **orchestrated pipeline** of modern technologies. The workflow is as follows:
 
 1. **User Query**  
-   A student enters a concept (e.g., "Graph Traversal").
+   A student inputs a concept (e.g., "Graph Traversal").
 
 2. **Knowledge Retrieval**  
-   The system queries a **Knowledge Graph (Neo4j)** to fetch structured information, concepts, and relationships.
+   The system queries a **Knowledge Graph (Neo4j)** to fetch structured information, related concepts, and interconnections.
 
 3. **Content Generation**  
    AI Layer (using **Gemini/GPT**) generates:  
    - A detailed narration script  
-   - Bullet-point slides  
+   - A bullet-point slide outline  
 
 4. **Content Formatting**  
-   Standardizes AI output into a **structured JSON format**, ensuring consistency and machine-readability.
+   The AI output is standardized into a **JSON/Markdown format** for consistency and machine-readability.
 
 5. **Video Animation**  
-   **Manim Automation Layer** parses the structured content and generates animations, synchronized with the narration.
+   The **Manim Automation Layer** parses formatted content and automatically generates slides with synchronized animations.
 
 6. **Video Output**  
-   Final MP4 video is rendered and stored for future retrieval.
+   The final MP4 video is rendered and stored for future retrieval.
 
 ---
 
 ## 🚀 Key Features
 
-- **Personalized Learning:** Tailored explanations for each query.  
-- **Engaging Visuals:** High-quality animations simplify complex topics.  
-- **Scalable & Efficient:** Rapid content creation across multiple domains.  
-- **Structured Knowledge:** Knowledge Graph ensures accuracy and interconnected concepts.
+- **Personalized Learning:** Provides explanations tailored to each query.  
+- **Engaging Visuals:** High-quality, auto-generated animations simplify complex topics.  
+- **Scalable & Efficient:** The automated pipeline enables rapid content generation across multiple domains.  
+- **Structured Knowledge:** Knowledge Graph ensures accuracy and an interconnected view of concepts.
 
 ---
 
@@ -63,7 +64,7 @@ edu-viz/
 ├── design.md                 # Detailed design document
 └── pseudo_code.md            # Pseudocode for the pipeline logic
 
-    ✅ Clear hierarchy and folders separate functionality, data, visuals, and scripts for better organization.
+    ✅ Clear folder hierarchy separates core logic, data, visuals, and scripts for better readability and collaboration.
 
 🛠️ Technical Stack
 
@@ -75,32 +76,12 @@ edu-viz/
 
     Video Generation: Manim Community Edition
 
-    Databases: PostgreSQL / Redis (for caching)
+    Databases / Caching: PostgreSQL / Redis
 
 🚧 Trade-offs & Design Decisions
 
-    Knowledge Graph vs Relational DB: Graph DB chosen for modeling complex, interconnected relationships enabling semantic search; avoids costly joins in SQL.
+    Knowledge Graph vs Relational DB: Graph DB is used to model complex, interconnected relationships enabling semantic search; avoids costly joins in SQL.
 
-    AI API vs Custom NLP: LLM API chosen for fast content creation and continuous model improvements; custom NLP avoided due to time constraints.
+    AI API vs Custom NLP: LLM API chosen for fast, high-quality content generation; custom NLP avoided due to time constraints and complexity.
 
-    Manim vs PowerPoint Animations: Programmatic approach allows full automation and scalability; PowerPoint is manual and labor-intensive.
-
-📜 License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-
----
-
-### ✅ Improvements in this version:
-1. **Repo structure is visually clear** with folders and files properly indented.  
-2. Added **assets/** folder for your architecture diagram.  
-3. Key features and steps separated for **easy readability**.  
-4. Trade-offs section is concise and readable.  
-5. Overall formatting **looks professional and attractive** on GitHub.  
-
----
-
-If you want, I can **also make a fully polished `pseudo_code.md`** and **update `design.md`** so that all your files **look consistent, professional, and submission-ready**.  
-
-Do you want me to do that next?
+    Manim vs PowerPoint Animations: Programmatic approach allows full automation and scalability; PowerPoint is manual and not suitable for automated pipelines.
