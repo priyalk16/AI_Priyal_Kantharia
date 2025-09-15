@@ -80,7 +80,8 @@ edu-viz/
 
 🚧 Trade-offs & Design Decisions
 
-    Knowledge Graph vs Relational DB: Graph DB is used to model complex, interconnected relationships enabling semantic search; avoids costly joins in SQL.
+    Knowledge Graph vs Relational DB: Graph D<img width="884" height="671" alt="Screenshot from 2025-09-15 13-50-04" src="https://github.com/user-attachments/assets/267ca500-b784-4ae2-ab94-38985acf9416" />
+B is used to model complex, interconnected relationships enabling semantic search; avoids costly joins in SQL.
 
     AI API vs Custom NLP: LLM API chosen for fast, high-quality content generation; custom NLP avoided due to time constraints and complexity.
 
